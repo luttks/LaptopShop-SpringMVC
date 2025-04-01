@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create a User</title>
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -27,7 +27,7 @@
             <div class="col-md-6 col-12 mx-auto">
                 <h3>Create a User</h3>
                 <hr />
-                <form:form method="post" action="/admin/user/create1" modelAttribute="newUser">
+                <form:form method="post" action="/admin/user/create" modelAttribute="newUser">
                     <div class="mb-3">
                         <label class="form-label">Email address</label>
                         <form:input class="form-control" path="email"/>
