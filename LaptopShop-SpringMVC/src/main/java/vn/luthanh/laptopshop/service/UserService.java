@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import jakarta.persistence.EntityNotFoundException;
 import vn.luthanh.laptopshop.domain.User;
 import vn.luthanh.laptopshop.repository.UserRepository;
 
@@ -30,5 +31,14 @@ public class UserService {
 
     public User handleSaveUser(User user) {
         return this.userRepository.save(user);
+    }
+
+    public User getUserById(Long id) {
+        return this.userRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
+    }
+
+    public void deleteUserById(Long id) {
+        this.userRepository.deleteById(id);
     }
 }

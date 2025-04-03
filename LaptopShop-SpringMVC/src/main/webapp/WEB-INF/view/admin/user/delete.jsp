@@ -26,23 +26,19 @@
         <div class="row">
             <div class="col-12 mx-auto">
                 <div class="d-flex justify-content-between">
-                    <h3>User Detail with id = ${id}</h3>
-                    <a href="/admin/user/create" class="btn btn-primary">Create User</a>
+                    <h3>Delete User with id = ${id}</h3>
                 </div>
                 <hr />
-                <div class="card" style="width: 60%;">
-                    <div class="card-header">
-                      User Information
+                <div class="alert alert-danger">
+                  Are you sure you want to delete this user?
+                </div>
+                <form:form method="post" action="/admin/user/delete/${id}" modelAttribute="newUser">
+                    <div class="mb-3" style="display: none;">
+                        <label class="form-label">Id: </label>
+                        <form:input value="${id}" type="text" class="form-control" path="id"/>
                     </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">ID: ${user.id}</li>
-                      <li class="list-group-item">Email:  ${user.email} </li>
-                      <li class="list-group-item">Address:  ${user.address} </li>
-                      <li class="list-group-item">Fullname  ${user.fullName}</li>
-                    </ul>
-                  </div>
-                  <a href="/admin/user" class="btn btn-success mt-3">Back</a>
-            </div>
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form:form>
         </div>
     </div>
 </body>
