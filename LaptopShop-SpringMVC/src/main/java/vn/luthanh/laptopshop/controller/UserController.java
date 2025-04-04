@@ -72,7 +72,6 @@ public class UserController {
             currentUser.setPhone(oldUser.getPhone());
             this.userService.handleSaveUser(currentUser);
         }
-
         return "redirect:/admin/user";
     }
 
@@ -102,4 +101,3 @@ public class UserController {
 // <form method="post" action="/admin/user/create"> tra ve url
 
 //
-
